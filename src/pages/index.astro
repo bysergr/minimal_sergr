@@ -2,17 +2,12 @@
 import { SITE } from '~/config.mjs';
 import { getCanonical, getHomePermalink } from '~/utils/permalinks';
 import Layout from '~/layouts/PageLayout.astro';
-
-import Hero from '~/components/widgets/Hero.astro';
-import Note from '~/components/widgets/Note.astro';
-import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import Steps from '~/components/widgets/Steps.astro';
-import Features3 from '~/components/widgets/Features3.astro';
-import HighlightedPosts from '~/components/blog/HighlightedPosts.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+import Name from '~/components/widgets/Name.astro';
+import Description from '~/components/widgets/Description.astro';
+import CardProfile from '~/components/widgets/CardProfile.astro';
+import Bio from '~/components/widgets/Bio.astro';
+import Work from '~/components/widgets/Work.astro';
+import Projects from '~/components/widgets/Projects.astro';
 
 const meta = {
 	title: SITE.title,
@@ -22,14 +17,12 @@ const meta = {
 ---
 
 <Layout {meta}>
-	<Hero />
-	<Note />
-	<Features />
-	<Steps />
-	<Features2 />
-	<Features3 />
-	<HighlightedPosts />
-	<FAQs />
-	<Stats />
-	<CallToAction />
+	<Name />
+	<div class="px-8 pb-8 mx-auto max-w-[520px]">
+		<Description />
+		<CardProfile />
+		<Work />
+		<Bio />
+		<Projects />
+	</div>
 </Layout>

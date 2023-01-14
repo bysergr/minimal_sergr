@@ -1,6 +1,6 @@
 {
-  "name": "@onwidget/astrowind",
-  "description": "A template to make your website using Astro + Tailwind CSS.",
+  "name": "@bysergr/minimal_sergr",
+  "description": "Personal website with Astro + Tailwind CSS.",
   "version": "0.8.5",
   "private": true,
   "scripts": {
