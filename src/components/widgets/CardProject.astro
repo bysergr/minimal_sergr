@@ -1,0 +1,15 @@
+---
+import { Image } from '@astrojs/image/components';
+import { findImage } from '~/utils/images';
+import { getPermalink } from '~/utils/permalinks';
+
+const { project } = Astro.props;
+const image = await findImage(project.image);
+---
+
+<div class="w-fit pb-5 sm:pb-0 mx-auto sm:mx-0">
+	<a href={getPermalink(project.slug, 'project')}>
+		<Image src={image} class="rounded-md" width={210} height={110} alt={project.title} />
+	</a>
+	<h4 class="text-center font-semibold dark:text-white mb-4 pt-2">{project.title}</h4>
+</div>

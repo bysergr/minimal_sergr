@@ -1,14 +1,20 @@
+---
+import { getResumePermalink } from '~/utils/permalinks';
+---
+
 <h3 class="text-black dark:text-white text-xl font-bold mb-1 border-gray-500 border-solid border-b-4 block w-fit">
 	Resume
 </h3>
 <p class="text-justify dark:text-white text-base pt-2 indent-3">
-	I am a <span class="font-semibold text-orange-500">Software Developer</span> with experience in the development of projects in the independent and business field, with
-	management of technologies focused on the <span class="font-semibold text-orange-500">Back-End</span> and <span
-		class="font-semibold text-orange-500">Front-End</span
-	>, currently venturing into new technology and tools for new areas of development such as data science and marching
-	learning, I am currently studying computer and systems engineering degree.
+	I am a <span class="font-semibold text-orange-500">Software Developer</span> with experience in the development of projects
+	in the independent and business field, with management of technologies focused on the <span
+		class="font-semibold text-orange-500">Back-End</span
+	> and <span class="font-semibold text-orange-500">Front-End</span>, currently venturing into new technology and tools
+	for new areas of development such as data science and marching learning, I am currently studying computer and systems
+	engineering degree.
 </p>
 <a
-	class="py-2 px-5 mb-8 text-base border border-gray-400 font-semibold hover:text-orange-500 duration-100 mx-auto text-white mt-6 block h-fit w-fit rounded-md"
-	>My Resume</a
+	class="py-2 px-5 mb-8 text-base border border-gray-800 dark:border-gray-400 font-semibold hover:text-orange-500 dark:hover:text-orange-500 duration-100 mx-auto dark:text-white mt-6 block h-fit w-fit rounded-md"
+	target="_blank"
+	href={getResumePermalink()}>My Resume</a
 >

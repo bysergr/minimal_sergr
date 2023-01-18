@@ -1,0 +1,15 @@
+---
+import Item from '~/components/projects/ListItem.astro';
+
+const { projects } = Astro.props;
+---
+
+<ul>
+	{
+		projects.map((project: any) => (
+			<li class="mb-10 md:mb-16 px-0 ">
+				<Item project={project} />
+			</li>
+		))
+	}
+</ul>

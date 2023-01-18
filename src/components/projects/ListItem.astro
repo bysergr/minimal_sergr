@@ -1,0 +1,32 @@
+---
+import { Image } from '@astrojs/image/components';
+
+import { getPermalink } from '~/utils/permalinks';
+import { findImage } from '~/utils/images';
+
+const { project } = Astro.props;
+
+const image = await findImage(project.image);
+---
+
+<article class={`max-w-lg px-0 mb-20 mx-auto md:max-w-none grid gap-4 md:gap-8 ${image ? 'md:grid-cols-3' : ''}`}>
+	{
+		image && (
+			<a class="w-fit block mx-auto" href={getPermalink(project.slug, 'project')}>
+				<div class="w-fit">
+					<Image src={image} class="object-cover" width={240} height={200} alt={project.title} />
+				</div>
+			</a>
+		)
+	}
+	<div class="md:col-span-2 my-auto">
+		<header>
+			<h2 class="font-bold text-left text-3xl mb-2 hover:text-orange-500 transition duration-150">
+				<a class="" href={getPermalink(project.slug, 'project')}> {project.title}</a>
+			</h2>
+		</header>
+		<p class="text-base text-justify opacity-90">
+			{project.excerpt || project.description}
+		</p>
+	</div>
+</article>

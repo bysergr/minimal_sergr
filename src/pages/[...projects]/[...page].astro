@@ -1,0 +1,38 @@
+---
+import { SITE, PROJECTS } from '~/config.mjs';
+
+import Layout from '~/layouts/BlogLayout.astro';
+import ProjectList from '~/components/projects/List.astro';
+import Pagination from '~/components/atoms/Pagination.astro';
+
+import { fetchProjects } from '~/utils/projects';
+import { getCanonical, getPermalink, PROJECTS_BASE } from '~/utils/permalinks';
+
+export async function getStaticPaths({ paginate }) {
+	if (PROJECTS?.disabled || PROJECTS?.projects?.disabled) return [];
+
+	const projects = await fetchProjects();
+
+	return paginate(projects, {
+		params: { projects: PROJECTS_BASE || undefined },
+		pageSize: PROJECTS.amountPerPage,
+	});
+}
+
+const { page } = Astro.props;
+const currentPage = page.currentPage ?? 1;
+
+const meta = {
+	title: `Projects ${currentPage > 1 ? `- Page ${currentPage} ` : ''}- ${SITE.name}`,
+	description: SITE.description,
+	canonical: getCanonical(getPermalink(PROJECTS?.projects?.pathname)),
+	ogType: 'projects',
+	noindex: currentPage > 1,
+};
+---
+
+<Layout {meta}>
+	<Fragment slot="title">Some Projects</Fragment>
+	<ProjectList projects={page.data} />
+	<Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
+</Layout>

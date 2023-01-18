@@ -3,12 +3,10 @@ import { getHomePermalink } from '~/utils/permalinks';
 ---
 
 <section class="flex items-center w-screen h-screen p-16">
-  <div class="mx-auto">
-    <div class="name animate-move-bg bg-clip-text pb-4 mt-16">
-      <p class="font-extrabold text-transparent text-4xl min-h-fit text-center">
-        Error 404  	
-      </p>
-    </div>
-    <a rel="noopener noreferrer" href={getHomePermalink()} class="text-center block text-xl">Home</a>
-  </div>
+	<div class="mx-auto">
+		<div class="name animate-move-bg bg-clip-text pb-4 mt-16">
+			<p class="font-extrabold text-transparent text-4xl min-h-fit text-center">Error 404</p>
+		</div>
+		<a rel="noopener noreferrer" href={getHomePermalink()} class="text-center block text-xl">Home</a>
+	</div>
 </section>

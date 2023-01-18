@@ -6,33 +6,42 @@ export const SITE = {
 	trailingSlash: false,
 
 	title: 'Sergio Rey - Personal Website',
-	description: '🚀 This is my personal website using Astro and Tailwind CSS.',
+	description: 'This is my personal website using Astro and Tailwind CSS.',
 
 	googleAnalyticsId: false, // or "G-XXXXXXXXXX",
 	googleSiteVerificationId: 'orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M',
 };
 
 export const BLOG = {
-	disabled: false,
-	postsPerPage: 4,
+	disabled: true,
+	postsPerPage: 5,
 
 	blog: {
 		disabled: false,
-		pathname: 'blog', // blog main path, you can change this to "articles" (/articles)
+		pathname: 'blog',
 	},
 
 	post: {
 		disabled: false,
-		pathname: '', // empty for /some-post, value for /pathname/some-post
+		pathname: 'blog',
+	},
+};
+
+export const PROJECTS = {
+	disabled: false,
+	amountPerPage: 5,
+
+	projects: {
+		disabled: false,
+		pathname: 'projects',
 	},
 
-	category: {
+	project: {
 		disabled: false,
-		pathname: 'category', // set empty to change from /category/some-category to /some-category
+		pathname: 'projects',
 	},
+};
 
-	tag: {
-		disabled: false,
-		pathname: 'tag', // set empty to change from /tag/some-tag to /some-tag
-	},
+export const RESUME = {
+	pathname: 'resume.pdf',
 };

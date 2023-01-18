@@ -1,0 +1,40 @@
+---
+import { SITE, PROJECTS } from '~/config.mjs';
+
+import Layout from '~/layouts/PageLayout.astro';
+import SingleProject from '~/components/projects/SingleProject.astro';
+
+import { getCanonical, getPermalink, cleanSlug, PROJECT_BASE } from '~/utils/permalinks';
+import { findImage } from '~/utils/images';
+import { fetchProjects } from '~/utils/projects';
+
+export async function getStaticPaths() {
+	if (PROJECTS?.disabled || PROJECTS?.project?.disabled) return [];
+
+	const projects = await fetchProjects();
+
+	return projects.map((project) => ({
+		params: {
+			slug: cleanSlug(project.slug),
+			projects: PROJECT_BASE || undefined,
+		},
+		props: { project },
+	}));
+}
+
+const { project } = Astro.props;
+const url = getCanonical(getPermalink(project.slug, 'project'));
+
+const meta = {
+	title: `${project.title} — ${SITE.name}`,
+	description: project.description,
+	canonical: project.canonical || url,
+	image: await findImage(project.image),
+	ogTitle: project.title,
+	ogType: 'article',
+};
+---
+
+<Layout {meta}>
+	<SingleProject project={{ ...project, image: meta.image }} url={url} />
+</Layout>

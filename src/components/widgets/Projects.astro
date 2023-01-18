@@ -1,37 +1,19 @@
 ---
-import { Image } from '@astrojs/image/components';
-const projects = [
-	{
-		name: 'Project 1',
-		link: 'Eoo',
-		image: import('~/assets/images/default.png'),
-	},
-	{
-		name: 'Project 2',
-		link: 'Eoo',
-		image: import('~/assets/images/default.png'),
-	},
-];
+import { getProjectsPermalink } from '~/utils/permalinks';
+import { findLatestProjects } from '~/utils/projects';
+import CardProject from './CardProject.astro';
+
+let projects = await findLatestProjects({ count: 2 });
 ---
 
 <h3 class="dark:text-white text-xl font-bold mb-1 border-gray-500 border-solid border-b-4 block w-fit">Projects</h3>
 <p class="text-justify dark:text-white text-base pt-2 indent-3">
-	Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, nemo. Aliquid fugit exercitationem voluptatem
-	distinctio.
+	Developing different projects to learn and improve in order to have a great impact.
 </p>
 <div class="sm:flex justify-between my-6">
-	{
-		projects.map(({ image, link, name }) => (
-			<div class="w-fit pb-5 sm:pb-0 mx-auto sm:mx-0">
-        <a href={link}>
-				  <Image src={image} class="rounded-md" width={210} height={110} alt={name} />
-        </a>
-			  <h4 class="text-center font-semibold dark:text-white pt-2">{name}</h4>
-      </div>
-		))
-	}
+	{projects.map((project: any) => <CardProject project={project} />)}
 </div>
 <a
 	class="py-2 px-5 mb-8 text-base bg-orange-400 font-semibold hover:bg-orange-500 transition duration-150 mx-auto text-dark-bg mt-6 block h-fit w-fit rounded-md"
-	>My Projects</a
+	href={getProjectsPermalink()}>My Projects</a
 >
