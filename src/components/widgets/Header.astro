@@ -2,7 +2,7 @@
 import Logo from '~/components/atoms/Logo.astro';
 import ToggleTheme from '~/components/core/ToggleTheme.astro';
 import ToggleMenu from '~/components/core/ToggleMenu.astro';
-import { getHomePermalink, getBlogPermalink, getProjectsPermalink, getResumePermalink } from '~/utils/permalinks';
+import { getHomePermalink, getProjectsPermalink, getResumePermalink } from '~/utils/permalinks';
 ---
 
 <header
@@ -23,7 +23,9 @@ import { getHomePermalink, getBlogPermalink, getProjectsPermalink, getResumePerm
 			class="items-center w-full md:w-auto hidden md:flex text-gray-600 dark:text-slate-200 h-[calc(100vh-100px)] md:h-auto overflow-y-auto md:overflow-visible"
 			aria-label="Main navigation"
 		>
-			<ul class="flex flex-col pt-8 font-semibold md:pt-0 md:flex-row md:self-center w-full md:w-auto text-xl md:text-base">
+			<ul
+				class="flex flex-col pt-8 font-semibold md:pt-0 md:flex-row md:self-center w-full md:w-auto text-xl md:text-base"
+			>
 				<li>
 					<a
 						class="font-medium hover:text-gray-900 dark:hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out"
@@ -38,12 +40,6 @@ import { getHomePermalink, getBlogPermalink, getProjectsPermalink, getResumePerm
 						href={getProjectsPermalink()}
 						>Projects
 					</a>
-				</li>
-				<li>
-					<a
-						class="font-medium hover:text-gray-900 dark:hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out"
-						href={getBlogPermalink()}>Blog</a
-					>
 				</li>
 			</ul>
 			<div class="md:self-center flex items-center mb-4 md:mb-0 ml-2">

@@ -1,13 +1,7 @@
 # Sergio Rey WebSite
 
-This is my personal website create with [Astro](https://astro.build/), [TailwindCSS](https://tailwindcss.com/) and MDX support.
+This is my Personal WebSite create with [Astro](https://astro.build/) and [TailwindCSS](https://tailwindcss.com/),
 
-Create from the template [AstroWind](https://github.com/onwidget/astrowind).
+<!-- Link: https://sergr.vercel.app -->
 
-With support for [Projects](https://sergr.vercel.app/projects) and [Blog](https://sergr.vercel.app/blog) Pages.
-
-Link: https://sergr.vercel.app
-
-<img src="./homepage.jpg" alt="AstroWind Theme Screenshot">
-
-
+<img src="./homepage.jpg" alt="screenshot of home page">

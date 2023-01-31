@@ -14,6 +14,7 @@ const getNormalizedProject = async (project) => {
 		title: frontmatter.title,
 		description: frontmatter.description,
 		image: frontmatter.image,
+		svg: frontmatter.svg,
 
 		Content: Content,
 		// or 'body' in case you consume from API

@@ -41,13 +41,12 @@ const { project } = Astro.props;
 			}
 		</header>
 		<div
-			class="container dark:text-white text-black mx-auto px-6 sm:px-6 max-w-2xl prose prose-lg lg:prose-xl dark:prose-invert dark:prose-headings:text-white prose-headings:w-fit prose-headings:border-gray-500 prose-headings:border-solid prose-headings:border-b-4 prose-md prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold hover:prose-a:text-orange-600 hover:dark:prose-a:text-orange-600 transition duration-150 dark:prose-a:text-gray-200 prose-img:rounded-md prose-img:shadow-lg mt-8 prose-li:my-2 lg:prose-li:my-1 prose-li:marker:text-orange-600 "
+			class="container dark:text-white text-black mx-auto px-6 sm:px-6 max-w-2xl prose prose-lg lg:prose-xl dark:prose-invert dark:prose-headings:text-white prose-headings:w-fit prose-headings:border-gray-500 prose-headings:border-solid prose-headings:border-b-4 prose-md prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold hover:prose-a:text-orange-600 hover:dark:prose-a:text-orange-600 transition duration-150 dark:prose-a:text-gray-200 prose-img:rounded-md prose-img:shadow-lg mt-8 prose-li:my-2 lg:prose-li:my-1 prose-li:marker:text-orange-600"
 		>
 			{project.Content ? <project.Content /> : <Fragment set:html={project.body} />}
 		</div>
 		<div class="container mx-auto px-6 sm:px-6 max-w-2xl mt-8 flex justify-between flex-col sm:flex-row">
-
-    <Tags tags={project.tags} /> 
+			<Tags tags={project.tags} />
 		</div>
 	</article>
 </section>

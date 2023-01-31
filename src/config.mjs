@@ -6,25 +6,10 @@ export const SITE = {
 	trailingSlash: false,
 
 	title: 'Sergio Rey - Personal Website',
-	description: 'This is my personal website using Astro and Tailwind CSS.',
+	description: 'This is my Personal WebSite using Astro and Tailwind CSS.',
 
 	googleAnalyticsId: false, // or "G-XXXXXXXXXX",
-	googleSiteVerificationId: 'orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M',
-};
-
-export const BLOG = {
-	disabled: true,
-	postsPerPage: 5,
-
-	blog: {
-		disabled: false,
-		pathname: 'blog',
-	},
-
-	post: {
-		disabled: false,
-		pathname: 'blog',
-	},
+	googleSiteVerificationId: '',
 };
 
 export const PROJECTS = {
