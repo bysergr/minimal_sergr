@@ -10,7 +10,7 @@ let projects = await findLatestProjects({ count: 2 });
 <p class="text-justify dark:text-white text-base pt-2 indent-3">
 	Developing different projects to learn and improve in order to have a great impact.
 </p>
-<div class="sm:flex justify-around my-6">
+<div class="min-[550px]:flex justify-around my-6">
 	{projects.map((project: any) => <CardProject project={project} />)}
 </div>
 <a

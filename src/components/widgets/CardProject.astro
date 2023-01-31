@@ -9,7 +9,11 @@ const image = await findImage(project.image);
 
 <div class="w-fit pb-5 sm:pb-0 mx-auto sm:mx-0">
 	<a href={getPermalink(project.slug, 'project')}>
-		<Image src={image} class="rounded-md" width={210} height={110} alt={project.title} />
+		<Image
+			src={image}
+			class="rounded-md max-w-[280px] w-full h-auto min-[550px]:w-[210px] min-[550px]:h-[110px]"
+			alt={project.title}
+		/>
 	</a>
 	<h4 class="text-center font-semibold dark:text-white mb-4 pt-2">{project.title}</h4>
 </div>
