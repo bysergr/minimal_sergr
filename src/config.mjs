@@ -6,9 +6,9 @@ export const SITE = {
 	trailingSlash: false,
 
 	title: 'Sergio Rey - Personal Website',
-	description: 'This is my Personal WebSite using Astro and Tailwind CSS.',
+	description: 'This is my Personal WebSite ( Software Developer ).',
 
-	googleAnalyticsId: false, // or "G-XXXXXXXXXX",
+	googleAnalyticsId: 'G-TNEWQRHWWG', // or "G-XXXXXXXXXX",
 	googleSiteVerificationId: '',
 };
 

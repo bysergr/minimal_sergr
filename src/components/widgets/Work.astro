@@ -34,12 +34,12 @@ const data = [
 	complex systems, using agile methodologies (SCRUM), also different technologies and tools such as
 	{
 		data.map(({ name, to }, i) => {
-			if (i === 0) {
+			if (i === data.length - 1) {
 				return <TechLink to={to}>{name}</TechLink>;
 			}
 			return (
 				<>
-					, <TechLink to={to}>{name}</TechLink>
+				<TechLink to={to}>{name}</TechLink>,
 				</>
 			);
 		})
